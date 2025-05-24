@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccessiScan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <img src="accessibility-scan.png" alt="AccessiScan Logo" class="logo" />
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="home.html">Home</a>
+        <a href="#">Result</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sidebar Toggle Button -->
+  <button class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+
+  <!-- Slide-In Sidebar -->
+  <aside class="sidebar" role="complementary" aria-label="Sidebar Navigation">
+    <div class="sidebar-content">
+      <button class="dark-mode-btn" id="darkModeToggle">🌙 Dark Mode</button>
+      <button>💬 Feedback</button>
+      <button>💡 Tips</button>
+      <button>📝 Terms</button>
+      <button>🔔 Notifications</button>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <h1 id="hero-title" data-i18n="heroHeading">AccessiScan</h1>
+        <p id="hero-description" data-i18n="heroDesc">
+          Your website's accessibility made simple and fast. We analyze your
+          website's accessibility to ensure it meets the necessary standards
+          and provides an improved experience for all users, including those
+          with disabilities.
+        </p>
+        <div class="input-group">
+          <input
+            type="url"
+            id="urlInput"
+            placeholder="Enter website URL"
+            aria-label="Website URL"
+            required
+          />
+          <button class="scan-btn" id="scanButton" data-i18n="scanButton">Scan Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq container" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" data-i18n="faqHeading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3 data-i18n="faqQ1">What is AccessiScan?</h3>
+        <p id="faq-1" data-i18n="faqA1">
+          AccessiScan is a tool that helps identify accessibility issues on your
+          website, making it more user-friendly for everyone.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-i18n="faqQ2">Why should I use it?</h3>
+        <p id="faq-2" data-i18n="faqA2">
+          To meet compliance standards and ensure your content is accessible to
+          users with disabilities.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-i18n="faqQ3">How does it work?</h3>
+        <p id="faq-3" data-i18n="faqA3">
+          Simply enter the URL of your website, and AccessiScan will analyze the
+          page for any accessibility issues. It provides feedback on potential
+          improvements and solutions.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is AccessiScan free to use?</h3>
+        <p id="faq-4">
+          Yes, AccessiScan offers a free version with basic accessibility
+          checks. For advanced features, a premium version is available.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2025 AccessiScan</p>
+      <div class="footer-links">
+        <a
+          href="https://github.com/Khushijoshi003"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/khushijoshi1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fab fa-linkedin"></i> LinkedIn</a
+        >
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Container -->
+  <div id="notification-container" aria-live="polite"></div>
+
+  <!-- External JavaScript -->
+  <script src="index.js"></script>
+</body>
+</html>

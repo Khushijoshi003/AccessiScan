@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+
+  <!-- 🔁 Auto-redirect to Hindi page if language is Hindi -->
+  <script>
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'hi' && window.location.pathname.endsWith('register.html')) {
+      window.location.href = 'register-hindi.html';
+    }
+  </script>
+
+  <!-- 🌐 Language Dropdown -->
+  <div style="position: absolute; top: 10px; right: 10px;">
+    <select id="languageSelect">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- 🔐 Registration Form -->
+  <div class="container">
+    <h1>Create Your Account</h1>
+    <div class="main">
+      <form id="register-form" method="POST">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Choose a username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required />
+
+        <button type="submit">Register</button>
+
+        <p class="redirect">Already have an account? <a href="login.html">Login here</a></p>
+      </form>
+    </div>
+  </div>
+  <script src="register.js"></script>
+</body>
+</html>

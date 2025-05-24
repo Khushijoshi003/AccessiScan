@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | AccessiScan</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- 🔁 Auto-redirect to Hindi version -->
+  <script>
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'hi' && window.location.pathname.endsWith('about.html')) {
+      window.location.href = 'about-hindi.html';
+    }
+  </script>
+
+  <!-- 🌐 Language Selector -->
+  <div style="position: absolute; top: 10px; right: 10px;">
+    <select id="languageSelect">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- 🌍 About Content -->
+  <div class="about-container">
+    <section class="hero">
+      <h1>About AccessiScan</h1>
+      <p>Empowering Inclusive Access Through Technology</p>
+    </section>
+
+    <section class="section">
+      <h2>What Is AccessiScan?</h2>
+      <p>
+        AccessiScan is an intelligent platform designed to evaluate and enhance physical and digital accessibility using advanced scanning and AI-based analysis. It helps businesses and individuals ensure environments are inclusive for everyone.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="feature-card">AI-powered accessibility scanning</div>
+        <div class="feature-card">Real-time insights and reports</div>
+        <div class="feature-card">Inclusive design recommendations</div>
+        <div class="feature-card">User-friendly dashboard</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Our Mission</h2>
+      <p>
+        At AccessiScan, our mission is to create a world where accessibility is not an afterthought — it's a foundation. We believe everyone deserves access, and we're building the tools to make that happen.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Why Accessibility Matters</h2>
+      <p>
+        Over 1 billion people globally live with some form of disability. Accessible environments benefit not just them — but all users. From better usability to broader reach, accessibility helps everyone.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Who Can Use AccessiScan?</h2>
+      <ul>
+        <li>Businesses & organizations</li>
+        <li>Accessibility consultants</li>
+        <li>Architects & developers</li>
+        <li>Public institutions</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 🌐 Language Switching Logic -->
+  <script>
+    const langSelect = document.getElementById('languageSelect');
+    const saved = localStorage.getItem('lang');
+    if (saved) langSelect.value = saved;
+
+    langSelect.addEventListener('change', function () {
+      const selectedLang = this.value;
+      localStorage.setItem('lang', selectedLang);
+
+      const currentPage = window.location.pathname.split('/').pop();
+      const basePage = currentPage.replace('-hindi', '').replace('.html', '');
+
+      if (selectedLang === 'en') {
+        window.location.href = `${basePage}.html`;
+      } else {
+        window.location.href = `${basePage}-hindi.html`;
+      }
+    });
+  </script>
+
+</body>
+</html>

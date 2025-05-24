@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="loginstyle.css" />
+</head>
+<body>
+
+  <!-- 🔁 Auto-redirect to Hindi page if saved language is Hindi -->
+  <script>
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'hi' && window.location.pathname.endsWith('login.html')) {
+      window.location.href = 'login-hindi.html';
+    }
+  </script>
+
+  <!-- 🌐 Language Selector -->
+  <div style="position: absolute; top: 10px; right: 10px;">
+    <select id="languageSelect" aria-label="Language Selector">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- Login Form -->
+  <div class="container">
+    <h1>Enter Your Details</h1>
+    <div class="main">
+      <form action="#" method="POST">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required />
+
+        <div class="options">
+          <label>
+            <input type="checkbox" name="remember" /> Remember Me
+          </label>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
